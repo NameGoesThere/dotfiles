@@ -1,0 +1,48 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "final_space": true,
+  "palette": {
+    "dark_green": "#50754b",
+    "light_green": "#ccffc5",
+    "python_yellow": "#ffe000"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "path",
+          "style": "diamond",
+          "trailing_diamond": "<p:light_green,transparent> > </>",
+          "leading_diamond": "\ue0be",
+          "foreground": "default",
+          "background": "p:dark_green",
+          "properties": {
+            "style": "folder"
+          },
+          "template": "{{if .Root}}ADMIN {{end}}{{ .Path }}"
+        }
+      ]
+    },
+    {
+      "type": "rprompt",
+      "segments": [
+        {
+          "type": "time",
+          "style": "plain",
+          "foreground": "p:light_green",
+          "background": "transparent"
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:light_green",
+          "background": "transparent",
+          "template": "<default>-</> <p:light_green>{{.Shell}}</>"
+        }
+      ]
+    }
+  ]
+}
